@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/avatar" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/avatar"
+        android:layout_toEndOf="@+id/avatar"
+        android:text="Thân Thị Thảo Vân"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/search_icon" />
+
+    <ImageView
+        android:id="@+id/gender"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_below="@id/username"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/avatar"
+        android:src="@drawable/male_orange" />
+
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/gender"
+        android:layout_marginLeft="4dp"
+        android:layout_toEndOf="@+id/gender"
+        android:text="21"
+        android:textColor="@color/bottom_plus_icon" />
+
+    <ImageView
+        android:id="@+id/clock"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_alignTop="@+id/age"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/age"
+        android:src="@drawable/clock" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/clock"
+        android:layout_marginLeft="4dp"
+        android:layout_toEndOf="@+id/clock"
+        android:ellipsize="marquee"
+        android:maxLength="15"
+        android:text="11h30 ngày mai"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_alignTop="@+id/time"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/time"
+        android:src="@drawable/near_me_black" />
+
+    <TextView
+        android:id="@+id/distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/arrow"
+        android:layout_marginLeft="3dp"
+        android:layout_toEndOf="@+id/arrow"
+        android:text="2km"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/messenger"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/button_message_ripple"
+        android:paddingBottom="7dp"
+        android:paddingLeft="7dp"
+        android:paddingTop="7dp"
+        android:src="@drawable/mail" />
+</RelativeLayout>

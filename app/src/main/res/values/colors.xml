@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--Basic color-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#00FF00</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="blue">#0080FF</color>
+    <color name="orange">#FF8000</color>
+    <color name="gray">#E9AEABAB</color>
+
+    <!--Advanced color-->
+    <color name="background_hint">#65000000</color>
+    <color name="search_bar">#FBF7F7</color>
+    <color name="search_text">#909090</color>
+    <color name="search_icon">#909090</color>
+    <color name="bottom_icon_inactive">#9A9A9A</color>
+    <color name="bottom_icon_active">#EE712B</color>
+    <color name="bottom_plus_icon">#EE712B</color>
+    <color name="discount_background">#DC4712</color>
+    <color name="all_day">#cccccccc</color>
+    <color name="five_star">#DC4712</color>
+    <color name="restaurant_name">#37474F</color>
+    <color name="discount">#FBF7F7</color>
+    <color name="color_location">#D9D9D9</color>
+    <color name="color_rating">#969696</color>
+    <color name="color_bg_comment">#EEEEEE</color>
+    <color name="background_button_skip">#c7c7c7</color>
+    <color name="bg_timer">#D8D8D8</color>
+
+</resources>

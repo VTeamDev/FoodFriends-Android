@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">FoodFriends</string>
+
+    <!--Log cat-->
+    <string name="loading_view_null">Loading view is null</string>
+    <string name="parent_view_null">Parent view is null</string>
+
+    <!--Login-->
+    <string name="email">Email</string>
+    <string name="password">Mật khẩu</string>
+    <string name="forgot_password">Quên mật khẩu?</string>
+    <string name="login">Đăng nhập</string>
+    <string name="register">Đăng kí</string>
+    <string name="signing_in">Đang đăng nhập</string>
+    <string name="error_login_invalidate_title">Lỗi</string>
+    <string name="error_login_invalidate_content">Email hoặc mật khẩu không hợp lệ</string>
+    <string name="error_login_unsuccessful">Đăng nhập thất bại, xin kiểm tra lại kết nối internet hoặc thông tin đăng nhập</string>
+
+    <!--Register-->
+    <string name="username">Tên hiển thị</string>
+    <string name="confirm_password">Nhập lại mật khẩu</string>
+    <string name="phone">Số điện thoại</string>
+    <string name="birthday">Ngày sinh</string>
+    <string name="male">Nam</string>
+    <string name="female">Nữ</string>
+    <string name="error_email_invalid">Email không hợp lệ</string>
+    <string name="error_password_invalid">Mật khẩu phải trong khoảng từ 6-32 kí tự</string>
+    <string name="error_password_confirm_invalid">Hai mật khẩu phải giống nhau</string>
+    <string name="error_phone_invalid">Số điện thoại phải là 1 số</string>
+    <string name="error_birthday_invalid">Ngày sinh không hợp lệ</string>
+    <string name="signing_up">Đang đăng kí</string>
+    <string name="error_register_unsuccessful">Đăng kí thất bại</string>
+
+    <!--Home fragment-->
+    <string name="follow">Theo dõi</string>
+    <string name="direct">Chỉ đường</string>
+    <string name="search_hint">Thông tin địa điểm, dịch vụ</string>
+
+    <!--Detail-->
+    <string name="rest_name_example">Bánh mì kẹp chả bò Boody</string>
+    <string name="rest_location_example">263 Trần Đại Nghĩa, Quận Hai Bà Trưng, Hà Nội</string>
+    <string name="rest_open_time_status_example">Đang mở cửa / </string>
+    <string name="rest_open_time_example">9:00 - 22:00</string>
+    <string name="rest_distance_example">2.5km</string>
+    <string name="rest_total_comment_example">25 đánh giá</string>
+    <string name="reserve">Đặt lịch</string>
+    <string name="gallery_title">Ảnh &amp; Video</string>
+    <string name="ranking_title">Xếp hạng &amp; nhận xét</string>
+    <string name="ranking_text">Chạm để xếp hạng</string>
+    <string name="write_comment">Viết nhận xét</string>
+    <string name="comment_title_example">Ăn tạm</string>
+    <string name="comment_author_example">Pew</string>
+    <string name="comment_time_example">13/11/2017 7:13</string>
+    <string name="comment_content_example">Ding Dong…Lễ Hội Mua Sắm Trực Tuyến 01-12 đến rồi các bạn ơi! Cơ Hội Duy Nhất Trong Năm
+        ⚡Nắng mưa là chuyện của trời
+        ⚡Ưu Đãi là của Sen Đỏ Tặng Người.</string>
+    <string name="detail_appbar_title">Restaurant</string>
+
+    <string name="rest_open">Đang mở cửa </string>
+    <string name="rest_close">Đang đóng cửa</string>
+
+    <!--Waiting-->
+    <string name="skip">Bỏ qua</string>
+
+    <!--Chat-->
+    <string name="message_hint">Nhắn tin</string>
+
+    <!--Messenger-->
+    <string name="messenger_title">Messenger</string>
+
+</resources>
