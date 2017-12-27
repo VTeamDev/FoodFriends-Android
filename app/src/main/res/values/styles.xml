@@ -16,16 +16,18 @@
     <style name="Widget.TextInputLayout">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">@dimen/input_height</item>
-        <item name="android:textColorHint">@color/orange</item>
+        <item name="android:textColorHint">@color/email_input_text</item>
     </style>
 
     <style name="Widget.TextInputEditText">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:backgroundTint">@color/orange</item>
-        <item name="android:textColor">@color/orange</item>
-        <item name="android:textColorHint">@color/orange</item>
-        <item name="android:textColorHighlight">@color/orange</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:background">@drawable/bg_email_input</item>
+        <item name="android:backgroundTint">@color/bg_email_input</item>
+        <item name="android:textColor">@color/email_input_text</item>
+        <item name="android:textColorHint">@color/email_input_text</item>
+        <item name="android:textColorHighlight">@color/email_input_text</item>
     </style>
 
     <style name="TextViewDaySelection">

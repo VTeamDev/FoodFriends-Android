@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.apollographql.android'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
@@ -42,6 +43,8 @@ dependencies {
     compile "com.google.firebase:firebase-messaging:$rootProject.ext.firebaseVersion"
     compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
     implementation "com.google.android.gms:play-services-location:$rootProject.ext.firebaseVersion"
+    compile "com.apollographql.apollo:apollo-runtime:$rootProject.ext.graphqlVersion"
+    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.loggingInterceptorVersion"
 }
 repositories {
     mavenCentral()

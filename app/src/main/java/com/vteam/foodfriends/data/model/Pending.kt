@@ -3,7 +3,7 @@ package com.vteam.foodfriends.data.model
 /**
  * Created by H2PhySicS on 12/13/2017.
  */
-class Pending(val uid : String,
+data class Pending(val uid : String,
               val time : String,
               val lat : Double,
               val lon : Double,

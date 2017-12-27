@@ -1,0 +1,33 @@
+mutation Login($email: String!, $password: String!){
+  authResponse : login(email: $email, password: $password){
+    token
+    issuedAt
+    expiresIn
+  }
+}
+
+mutation Register($firstName: String!, $lastName: String!, $email: String!, $password: String!){
+  user: register(firstName: $firstName, lastName: $lastName, email: $email, password: $password){
+    id
+    firstName
+    lastName
+    email
+    createdAt
+    updatedAt
+  }
+}
+
+query User{
+    currentUser: me {
+        id
+        email
+        firstName
+        lastName
+        createdAt
+        updatedAt
+
+      }
+}
+
+
+

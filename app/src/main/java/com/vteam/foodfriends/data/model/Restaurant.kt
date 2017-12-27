@@ -5,7 +5,7 @@ import kotlin.properties.Delegates
 /**
  * Created by H2PhySicS on 12/11/2017.
  */
-class Restaurant(val id : String,
+data class Restaurant(val id : String,
                  val name: String?,
                  val address : String?,
                  val photoUrl : String?,

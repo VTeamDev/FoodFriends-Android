@@ -11,6 +11,7 @@
     <string name="forgot_password">Quên mật khẩu?</string>
     <string name="login">Đăng nhập</string>
     <string name="register">Đăng kí</string>
+    <string name="dont_have_account">Chưa có tài khoản?</string>
     <string name="signing_in">Đang đăng nhập</string>
     <string name="error_login_invalidate_title">Lỗi</string>
     <string name="error_login_invalidate_content">Email hoặc mật khẩu không hợp lệ</string>

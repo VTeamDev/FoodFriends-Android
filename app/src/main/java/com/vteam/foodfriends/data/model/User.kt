@@ -3,7 +3,7 @@ package com.vteam.foodfriends.data.model
 /**
  * Created by H2PhySicS on 12/12/2017.
  */
-class User(val id : String,
+data class User(val id : String,
            val name : String,
            val phone : String,
            val dob : String,
