@@ -6,6 +6,8 @@ import android.util.Log
 import com.google.firebase.firestore.FieldValue
 import com.vteam.foodfriends.R
 import com.vteam.foodfriends.data.model.Message
+import com.vteam.foodfriends.data.remote.Authentication
+import com.vteam.foodfriends.data.remote.Callback
 import com.vteam.foodfriends.data.remote.FirebaseMessageService
 import com.vteam.foodfriends.ui.base.BaseActivity
 
@@ -33,8 +35,6 @@ class TestActivity : BaseActivity() {
                 .addOnSuccessListener { documentReference ->
                     Log.e("TestActivity", documentReference.id)
                 }
-
-
     }
 
 }

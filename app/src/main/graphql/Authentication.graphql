@@ -17,6 +17,18 @@ mutation Register($firstName: String!, $lastName: String!, $email: String!, $pas
   }
 }
 
+mutation Update(
+  $firstName: String!
+  $lastName: String!
+){
+  updateMe(firstName: $firstName, lastName: $lastName){
+    id
+    firstName
+    lastName
+    createdAt
+  }
+}
+
 query User{
     currentUser: me {
         id
