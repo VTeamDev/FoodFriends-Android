@@ -24,9 +24,13 @@
     <string name="birthday">Ngày sinh</string>
     <string name="male">Nam</string>
     <string name="female">Nữ</string>
+    <string name="firstname">Firstname</string>
+    <string name="lastname">Lastname</string>
+    <string name="login_view">Đăng nhập?</string>
     <string name="error_email_invalid">Email không hợp lệ</string>
     <string name="error_password_invalid">Mật khẩu phải trong khoảng từ 6-32 kí tự</string>
     <string name="error_password_confirm_invalid">Hai mật khẩu phải giống nhau</string>
+    <string name="error_no_character">Thiếu ký tự đặc biệt</string>
     <string name="error_phone_invalid">Số điện thoại phải là 1 số</string>
     <string name="error_birthday_invalid">Ngày sinh không hợp lệ</string>
     <string name="signing_up">Đang đăng kí</string>

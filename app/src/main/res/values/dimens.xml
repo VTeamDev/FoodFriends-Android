@@ -13,4 +13,7 @@
     <dimen name="dots_margin_bottom">10dp</dimen>
     <dimen name="default_layout_padding">10dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <!--Register-->
+    <dimen name="margin_text_input_register">15dp</dimen>
 </resources>

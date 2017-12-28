@@ -20,25 +20,25 @@ import java.util.regex.Pattern
 /**
  * Created by H2PhySicS on 12/11/2017.
  */
-class AppUtils(val context: Context){
+class AppUtils(val context: Context) {
     companion object {
-        private val LOG_TAG : String = AppUtils::class.java.simpleName
+        private val LOG_TAG: String = AppUtils::class.java.simpleName
         val VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE)
         val VALID_PHONE_REGEX = Pattern.compile("^(?:(?:\\\\+?1\\\\s*(?:[.-]\\\\s*)?)?(?:\\\\(\\\\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\\\\s*\\\\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\\\\s*(?:[.-]\\\\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\\\\s*(?:[.-]\\\\s*)?([0-9]{4})(?:\\\\s*(?:#|x\\\\.?|ext\\\\.?|extension)\\\\s*(\\\\d+))?\$")
     }
 
-    fun getCurrentTime() : String{
-        val date : Date = Date()
+    fun getCurrentTime(): String {
+        val date: Date = Date()
         val simpleDateFormat = SimpleDateFormat("HH:mm")
         return simpleDateFormat.format(date)
     }
 
-    fun getDates(numDay : Int) : Array<String?>{
+    fun getDates(numDay: Int): Array<String?> {
         var date = Date()
 
-        var currentTime : Long = date.time
+        var currentTime: Long = date.time
         var dates = arrayOfNulls<String>(numDay)
-        for (i in 0..(numDay - 1)){
+        for (i in 0..(numDay - 1)) {
             date.time = currentTime
             var format = SimpleDateFormat("HH:mm/dd/MM/yyyy")
             dates[i] = format.format(date)
@@ -48,23 +48,23 @@ class AppUtils(val context: Context){
         return dates
     }
 
-    fun getDistance(latUser : Double, lonUser : Double, latShop : Double, lonShop : Double) : Int{
+    fun getDistance(latUser: Double, lonUser: Double, latShop: Double, lonShop: Double): Int {
         return -1
     }
 
-    fun isOpening(openTime : String, closeTime : String) : Boolean{
+    fun isOpening(openTime: String, closeTime: String): Boolean {
         var isOpen = false
         val open = getTimeFromString(openTime)
         val close = getTimeFromString(closeTime)
         val current = Date()
-        if (open.compareTo(current) < 1 && current.compareTo(close) < 1){
+        if (open.compareTo(current) < 1 && current.compareTo(close) < 1) {
             isOpen = true
         }
 
         return isOpen
     }
 
-    fun getTimeFromString(time : String) : Date{
+    fun getTimeFromString(time: String): Date {
         val str = time.split(":")
         val date = Date()
         date.hours = str[0].toInt()
@@ -72,7 +72,7 @@ class AppUtils(val context: Context){
         return date
     }
 
-    fun getAge(birthday : String) : Int{
+    fun getAge(birthday: String): Int {
         var age = 0
 
         val simpleFormat = SimpleDateFormat("dd/MM/yyyy")
@@ -82,41 +82,41 @@ class AppUtils(val context: Context){
         return age
     }
 
-    fun convertStringToDate(s : String) : Date?{
+    fun convertStringToDate(s: String): Date? {
         val simpleFormat = SimpleDateFormat("HH:mm/dd/MM/yyyy")
-        val date : Date? = simpleFormat.parse(s)
+        val date: Date? = simpleFormat.parse(s)
         return date
     }
 
-    fun convertDateToString(date : Date) : String?{
+    fun convertDateToString(date: Date): String? {
         val simpleFormat = SimpleDateFormat("HH:mm/dd/MM/yyyy")
         return simpleFormat.format(date)
     }
 
-    fun getDayOfDate(date: Date) : String{
+    fun getDayOfDate(date: Date): String {
         val simpleDateFormat = SimpleDateFormat("dd");
         return simpleDateFormat.format(date);
     }
 
-    fun isEmail(email : String) : Boolean{
-        val matcher : Matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(email)
+    fun isEmail(email: String): Boolean {
+        val matcher: Matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(email)
         return matcher.find()
     }
 
-    fun isPassword(password : String) : Boolean{
+    fun isPassword(password: String): Boolean {
         return true
     }
 
-    fun isPhoneNumber(phone : String) : Boolean{
-        val matcher : Matcher = VALID_PHONE_REGEX.matcher(phone)
+    fun isPhoneNumber(phone: String): Boolean {
+        val matcher: Matcher = VALID_PHONE_REGEX.matcher(phone)
         return matcher.find()
     }
 
-    fun isBirthday(brithday : String) : Boolean{
+    fun isBirthday(brithday: String): Boolean {
         return true
     }
 
-    fun getScreenSize(activity : AppCompatActivity) : IntArray{
+    fun getScreenSize(activity: AppCompatActivity): IntArray {
         val displayMetrics = DisplayMetrics()
         activity.windowManager.defaultDisplay.getMetrics(displayMetrics)
         val width = displayMetrics.widthPixels
@@ -124,9 +124,9 @@ class AppUtils(val context: Context){
         return intArrayOf(width, height)
     }
 
-    fun getLastLocation(context: Context, callback: LocationCallback){
+    fun getLastLocation(context: Context, callback: LocationCallback) {
         if (ActivityCompat.checkSelfPermission(context, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                && ActivityCompat.checkSelfPermission(context, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+                && ActivityCompat.checkSelfPermission(context, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             Log.e(LOG_TAG, "Lack of location permission")
             return
         }
@@ -134,6 +134,23 @@ class AppUtils(val context: Context){
         locationClient.lastLocation.addOnSuccessListener { location: Location? ->
             callback.onSuccess(location)
         }
+    }
+
+    fun checkCharacter(password: String?): Boolean {
+        var character: Char
+        var count = 1
+        for (i in 0 until password!!.length - 1) {
+            character = password!!.get(i)
+            if (!Character.isLetterOrDigit(character)) {
+                return false
+            } else if (Character.isDigit(character)) {
+                count++
+                if (count < 1) {
+                    return false
+                }
+            }
+        }
+        return true
     }
 
 }
