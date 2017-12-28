@@ -24,7 +24,7 @@ class TestActivity : BaseActivity() {
     }
 
     override fun initData() {
-
+        //
     }
 
 }
