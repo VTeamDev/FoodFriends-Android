@@ -62,5 +62,9 @@ class Constant{
         val EXTRA_RESTAURANT_ID = "resId"
         val EXTRA_ROOM_ID = "roomId"
 
+        val PREF_NAME = "FoodFriendsPreferences"
+        val PREF_TOKEN = "token"
+        val PREF_TOKEN_EXPIRE = "token_expire"
+
     }
 }

@@ -12,11 +12,11 @@ import com.vteam.foodfriends.data.remote.FirebaseMessageService
 import com.vteam.foodfriends.ui.base.BaseActivity
 
 class TestActivity : BaseActivity() {
-
+    private val LOG_TAG = TestActivity::class.java.simpleName
     val mMessageService = FirebaseMessageService(this)
 
     init {
-        contentView = R.layout.activity_chat
+        contentView = R.layout.activity_login
     }
 
     override fun initView() {
@@ -25,16 +25,6 @@ class TestActivity : BaseActivity() {
 
     override fun initData() {
 
-        mMessageService.getMessages("gUON80Q8wjYMh0okogtr")
-                .addSnapshotListener { querySnapshot, firebaseFirestoreException ->
-                    Log.e("TestActivity", querySnapshot.isEmpty.toString())
-                }
-
-        val message = Message("v1ewYqwbgnduUqCMHgQFKX4G6au2", "Hello")
-        mMessageService.sendMessage("gUON80Q8wjYMh0okogtr", message)
-                .addOnSuccessListener { documentReference ->
-                    Log.e("TestActivity", documentReference.id)
-                }
     }
 
 }

@@ -13,6 +13,9 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.vteam.foodfriends.Manifest
 import com.vteam.foodfriends.R
+import com.vteam.foodfriends.data.preferences.AppPreferences
+import com.vteam.foodfriends.data.remote.Authentication
+import com.vteam.foodfriends.data.remote.Callback
 import com.vteam.foodfriends.data.remote.FirebaseUserService
 import com.vteam.foodfriends.utils.AppUtils
 
@@ -22,8 +25,9 @@ import com.vteam.foodfriends.utils.AppUtils
 class LoginPresenter(val context: Context,
                      val view : LoginContract.View) : LoginContract.Presenter {
     val LOG_TAG : String = LoginPresenter::class.java.simpleName
-    val mUserService : FirebaseUserService = FirebaseUserService(context)
+    val authentication = Authentication()
     val utils = AppUtils(context)
+    val pref = AppPreferences(context)
     init {
         view.presenter = this
     }
@@ -37,25 +41,28 @@ class LoginPresenter(val context: Context,
 
     }
 
-    override fun login(email: String?, password: String?) {
+    override fun login(email: String, password: String) {
         view.showLoadingIndicator(context.getString(R.string.signing_in))
-        mUserService.signInWithEmail(email!!, password!!).addOnCompleteListener{task: Task<AuthResult> ->
-            if (task.isSuccessful){
-                Log.e(LOG_TAG, "Login successful")
+        authentication.login(email, password, object : Callback<LoginMutation.AuthResponse>{
+            override fun onSuccess(t: LoginMutation.AuthResponse) {
+                pref.setToken(t.token(), t.expiresIn())
                 view.hideLoadingIndicator()
                 view.openMain()
-            } else {
-                Log.e(LOG_TAG, "Login unsuccessful")
+            }
+
+            override fun onFailed() {
                 view.hideLoadingIndicator()
                 view.showAlertError(context.getString(R.string.error_login_invalidate_title), context.getString(R.string.error_login_unsuccessful))
             }
-        }
+
+        })
     }
 
-    override fun validateInput(email: String?, password: String?) : Boolean {
-        if (!utils.isEmail(email!!) || password!!.length < 6){
+    override fun validateInput(email: String, password: String) : Boolean {
+        if (!utils.isEmail(email) || !utils.isPassword(password)){
             return false
         }
+
         return true
     }
 

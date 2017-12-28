@@ -103,6 +103,10 @@ class AppUtils(val context: Context){
         return matcher.find()
     }
 
+    fun isPassword(password : String) : Boolean{
+        return true
+    }
+
     fun isPhoneNumber(phone : String) : Boolean{
         val matcher : Matcher = VALID_PHONE_REGEX.matcher(phone)
         return matcher.find()

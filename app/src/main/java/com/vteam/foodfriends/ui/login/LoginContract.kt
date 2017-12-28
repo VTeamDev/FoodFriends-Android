@@ -8,8 +8,8 @@ import com.vteam.foodfriends.ui.base.BaseView
  */
 interface LoginContract{
     interface Presenter : BasePresenter {
-        fun login(email: String?, password: String?)
-        fun validateInput(email : String?, password : String?) : Boolean
+        fun login(email: String, password: String)
+        fun validateInput(email : String, password : String) : Boolean
     }
 
     interface View : BaseView<Presenter> {

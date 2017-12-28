@@ -32,8 +32,8 @@
     <color name="color_bg_comment">#EEEEEE</color>
     <color name="background_button_skip">#c7c7c7</color>
     <color name="bg_timer">#D8D8D8</color>
-    <color name="bg_email_input">#98EE712B</color>
-    <color name="email_input_text">#FFFFFF</color>
+    <color name="bg_email_input">#85FFFFFF</color>
+    <color name="email_input_text">#F7F7F7</color>
     <color name="login_button">#FF7070</color>
 
 </resources>

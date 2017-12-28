@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
+import android.text.TextUtils
 import android.view.View
 import com.vteam.foodfriends.R
 import com.vteam.foodfriends.ui.adapter.TextWatcherAdapter
@@ -85,10 +86,12 @@ class LoginActivity : BaseActivity(), LoginContract.View, View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        val email : String = email.text.toString()
-        val password : String = password.text.toString()
         when(v?.id){
             R.id.login -> {
+                if (TextUtils.isEmpty(email.text) || TextUtils.isEmpty(password.text)) return
+
+                val email : String = email.text.toString()
+                val password : String = password.text.toString()
                 val isValidate = presenter.validateInput(email, password)
                 if (isValidate){
                     presenter.login(email, password)

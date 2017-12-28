@@ -30,7 +30,9 @@
         <activity android:name=".ui.detail.DetailActivity" />
         <activity android:name=".ui.waiting.WaitingActivity" />
         <activity android:name=".ui.chat.ChatActivity" />
-        <activity android:name=".ui.test.TestActivity"></activity>
+        <activity android:name=".ui.test.TestActivity">
+
+        </activity>
         <activity android:name=".ui.messenger.MessengerActivity"></activity>
     </application>
 

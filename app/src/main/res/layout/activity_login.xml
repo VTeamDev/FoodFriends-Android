@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background"
+    android:background="@drawable/bg_login"
     tools:context=".ui.login.LoginActivity">
 
     <ImageView
@@ -33,23 +33,10 @@
         android:layout_height="wrap_content"
         android:paddingLeft="@dimen/medium_margin"
         android:paddingRight="@dimen/medium_margin"
-        android:layout_marginBottom="@dimen/medium_margin"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/login">
-
-        <!--<TextView-->
-            <!--android:id="@+id/logo"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="@string/app_name"-->
-            <!--android:textColor="@color/orange"-->
-            <!--android:textStyle="bold"-->
-            <!--android:textSize="22sp"-->
-            <!--android:layout_marginTop="60dp"-->
-            <!--app:layout_constraintLeft_toLeftOf="parent"-->
-            <!--app:layout_constraintRight_toRightOf="parent"-->
-            <!--app:layout_constraintTop_toTopOf="parent"/>-->
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <android.support.design.widget.TextInputLayout
             style="@style/Widget.TextInputLayout"
@@ -60,8 +47,8 @@
             app:layout_constraintRight_toRightOf="parent">
 
             <android.support.design.widget.TextInputEditText
-                style="@style/Widget.TextInputEditText"
                 android:id="@+id/email"
+                style="@style/Widget.TextInputEditText"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress" />
 
@@ -70,7 +57,7 @@
         <android.support.design.widget.TextInputLayout
             style="@style/Widget.TextInputLayout"
             android:id="@+id/passwordLayout"
-            app:passwordToggleTint="@color/orange"
+            app:passwordToggleTint="@color/black"
             app:hintEnabled="false"
             android:layout_marginTop="15dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -85,19 +72,20 @@
 
         </android.support.design.widget.TextInputLayout>
 
-        <TextView
-            android:id="@+id/forgotPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/forgot_password"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:layout_marginTop="@dimen/default_margin"
-            android:layout_marginBottom="@dimen/default_margin"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/passwordLayout"/>
-
     </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forgot_password"
+        android:textColor="@color/email_input_text"
+        android:textSize="@dimen/default_text_size"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginRight="@dimen/medium_margin"
+        app:layout_constraintRight_toRightOf="@id/inputLayout"
+        app:layout_constraintTop_toBottomOf="@id/inputLayout"/>
 
     <Button
         android:id="@+id/login"
@@ -106,7 +94,8 @@
         android:layout_weight="1"
         android:background="@drawable/rounded_login_button"
         android:text="@string/login"
-        android:textColor="@color/white"
+        android:textColor="@color/email_input_text"
+        android:textSize="@dimen/default_text_size"
         android:textStyle="bold"
         android:layout_marginBottom="@dimen/medium_margin"
         android:layout_marginLeft="@dimen/medium_margin"
@@ -129,14 +118,14 @@
             android:layout_height="wrap_content"
             android:text="@string/dont_have_account"
             android:textColor="@color/white"
-            android:textSize="16sp"/>
+            android:textSize="@dimen/default_text_size"/>
         <TextView
             android:id="@+id/register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/register"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="@dimen/default_text_size"
             android:textStyle="bold"
             android:layout_marginLeft="5dp"/>
     </LinearLayout>
