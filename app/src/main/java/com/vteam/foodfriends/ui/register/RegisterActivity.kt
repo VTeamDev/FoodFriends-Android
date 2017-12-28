@@ -2,8 +2,10 @@ package com.vteam.foodfriends.ui.register
 
 import android.app.Activity
 import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP
 import android.os.Bundle
 import android.text.Editable
+import android.util.Log
 import android.view.View
 import com.vteam.foodfriends.R
 import com.vteam.foodfriends.ui.adapter.TextWatcherAdapter
@@ -15,6 +17,10 @@ class RegisterActivity : BaseActivity(), RegisterContract.View, View.OnClickList
 
     override lateinit var presenter: RegisterContract.Presenter
 
+    companion object {
+        private val TAG = RegisterActivity::class.java.simpleName
+    }
+
     init {
         contentView = R.layout.activity_register
     }
@@ -25,7 +31,7 @@ class RegisterActivity : BaseActivity(), RegisterContract.View, View.OnClickList
                 passwordLayout.isPasswordVisibilityToggleEnabled = s!!.isNotEmpty()
             }
         })
-        passwordComfirm.addTextChangedListener(object : TextWatcherAdapter(){
+        passwordComfirm.addTextChangedListener(object : TextWatcherAdapter() {
             override fun afterTextChanged(s: Editable?) {
                 passwordConfirmLayout.isPasswordVisibilityToggleEnabled = s!!.isNotEmpty()
             }
@@ -34,11 +40,12 @@ class RegisterActivity : BaseActivity(), RegisterContract.View, View.OnClickList
 
     override fun initData() {
         presenter = RegisterPresenter(this, this)
-        register.setOnClickListener(this)
+        bt_register.setOnClickListener(this)
+        tv_login.setOnClickListener(this)
     }
 
     override fun showLoadingIndicator(message: String?) {
-        if (message == null){
+        if (message == null) {
             showLoading()
         } else {
             showLoading(message)
@@ -52,7 +59,7 @@ class RegisterActivity : BaseActivity(), RegisterContract.View, View.OnClickList
     }
 
     override fun showAlertError(message: String?, title: String?) {
-
+        showAlert(title!!, message!!)
     }
 
     override fun openMain() {
@@ -61,17 +68,21 @@ class RegisterActivity : BaseActivity(), RegisterContract.View, View.OnClickList
     }
 
     override fun onClick(v: View?) {
-        val email : String? = email.text.toString()
-        val username : String? = username.text.toString()
-        val password : String? = password.text.toString()
-        val passwordConfirm : String? = passwordComfirm.text.toString()
-        val phone : String? = phone.text.toString()
-        val birthday : String? = birthday.text.toString()
-        val gender : Boolean = true
-        when(v?.id){
-            R.id.register -> {
-//                presenter.validateInput(email, username, password, passwordConfirm, phone, birthday)
-                presenter.register(email!!, password!!, username!!, phone!!, birthday!!, gender)
+        val email: String? = email.text.toString()
+        val firstname: String? = firstname.text.toString()
+        val lastname: String? = lastname.text.toString()
+        val passwordConfirm: String? = passwordComfirm.text.toString()
+        val password: String? = password.text.toString()
+
+        when (v?.id) {
+            R.id.bt_register -> {
+                presenter.validateInput(firstname, lastname, email, password, passwordConfirm)
+                presenter.register(firstname, lastname, email, password)
+                openMain()
+            }
+            R.id.tv_login -> {
+                Log.d(TAG,"hello")
+                finishActivityWithAnimation()
             }
         }
     }
